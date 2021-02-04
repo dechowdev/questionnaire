@@ -1,0 +1,17 @@
+{
+  "name": "questionnaire",
+  "version": "1.0.0",
+  "description": "Questionaire tool for getting questions in standup",
+  "main": "js/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "esbuild ./js/index.js --bundle --outfile=app.js --minify",
+    "bs": "npm run build && serve ."
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "esbuild": "^0.8.40",
+    "stimulus": "^2.0.0"
+  }
+}

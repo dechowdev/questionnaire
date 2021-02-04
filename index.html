@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Standup Questionaire</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet"> 
+  <style>
+    :root {
+      --nadeshiko-pink: #f5afc6ff;
+      --mauve: #f5acffff;
+      --mauve-2: #dbb3ffff;
+      --lavender-blue: #c2bfffff;
+      --blizzard-blue: #97ecffff;
+      --magic-mint: #90f5e0ff;
+      --light-green: #bbf59dff;
+      --mindaro: #dbf59bff;
+      --lemon-yellow-crayola: #f5f597ff;
+      --bright-red: #f77d5f;
+      --animation-time: 60s;
+    }
+    body {
+      background-color: var(--nadeshiko-pink);
+      padding: 0;
+      margin: 0;
+      animation: var(--animation-time) linear 1s infinite alternate colorchange;
+    }
+    main {
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      color: #fff;
+      position: relative;
+      height: 100vh;
+      place-items: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 3ch;
+      text-shadow: 0px 0px 20px rgba(000,000,000, 0.5);
+      text-align: center;
+      opacity: 0;
+      animation: 1s 1s ease-in fadein;
+      animation-fill-mode: forwards;
+    }
+    .background-image {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: 1;
+      filter: opacity(0.2) blur(3px) grayscale(1);
+      top: 0;
+      left: 0;
+      object-fit:cover;
+      opacity: 0;
+      animation: 1s 1s ease-in fadein;
+      animation-fill-mode: forwards;
+    }
+    @keyframes colorchange {
+      0% { background-color: var(--nadeshiko-pink); }
+      10% { background-color: var(--mauve); }
+      20% { background-color: var(--mauve-2); }
+      30% { background-color: var(--lavender-blue); }
+      40% { background-color: var(--blizzard-blue); }
+      50% { background-color: var(--magic-mint); }
+      60% { background-color: var(--light-green); }
+      70% { background-color: var(--mindaro); }
+      80% { background-color: var(--lemon-yellow-crayola); }
+      90% { background-color: var(--bright-red); }
+    }
+    @keyframes fadein {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+  <script src="./app.js" async></script>
+</head>
+<body data-controller="question">
+  <main>
+    <h1 data-question-target="output">
+      Press spacebar for question!
+    </h1>
+  </main>
+  <img class="background-image" src="https://source.unsplash.com/1600x900/?ocean,mountain,clouds" />
+</body>
+</html>
